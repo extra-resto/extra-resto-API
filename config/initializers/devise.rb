@@ -16,7 +16,7 @@ Devise.setup do |config|
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '7aff4dc43e6e63eb48a679a379a4a644226718e3be515a2b6a940a7ab23a3921ff14a33b062d9812cb86f84107779485385294c0eaf86e5bb905c48ed5dc31d9'
   config.jwt do |jwt|
-    jwt.secret = ENV['DEVISE_JWT_SECRET_KEY']
+    jwt.secret = 'fa867feedcfadfb4e5dfc372ff479e7b1328e4d9f99b22235cc3ec6b8ffbda8f09178a9689d1bf482a20b281ba1b24b8ac13dea1e7303547a98da669def076ee'
 		jwt.dispatch_requests = [
 	    ['POST', %r{^/api/login$}]
 	  ]
