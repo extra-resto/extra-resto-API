@@ -1,6 +1,7 @@
+
 # extra-resto API (MVP)
 
-##The project
+## The project
 
 This project is a  dummy F&B temporary job platform, coded during THP Next bootcamp 2021.
 This repository hosts the dedicated API.
@@ -8,13 +9,13 @@ It works in pair with its own [client app](https://github.com/extra-resto/extra-
 
 The app allows business owners to post events, and fill their staff needs, and candidates to seek and apply to jobs.
 
-##Database structure
+## Database structure
 
 <p align="center">
   <img alt="extra-resto database scheme" src="./public/img/extra-resto_min.png"/>
 </p>
 
-##Access
+## Accesses
 
 |Role|Email|Password                                                  
 |-|-|-|
@@ -22,14 +23,12 @@ The app allows business owners to post events, and fill their staff needs, and c
 | `Employer` | employer@test.fr |azerty
 | `Candidate` |candidate@test.fr |azerty
 
-##Try the app
-
-[Access the app](https://github.com/extra-resto/extra-resto-app)
+## Try the app: [extra-resto.fr](https://www.extra-resto.fr)
 
 ## Tech
 
-[Ruby on Rails](https://github.com/rails/rails)
-[Faker](https://github.com/faker-ruby/faker)
+- [Ruby on Rails](https://github.com/rails/rails)
+- [Faker](https://github.com/faker-ruby/faker)
 
 ## Potential Improvements
 
