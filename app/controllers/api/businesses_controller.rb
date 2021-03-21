@@ -1,5 +1,6 @@
 class Api::BusinessesController < ApplicationController
   before_action :set_business, only: [:show, :update, :destroy]
+  before_action :is_employer?, only: [:create]
 
   # GET /businesses
   def index
@@ -16,6 +17,7 @@ class Api::BusinessesController < ApplicationController
   # POST /businesses
   def create
     @business = Business.new(business_params)
+    @business.user = current_user
 
     if @business.save
       render json: @business, status: :created
@@ -46,6 +48,12 @@ class Api::BusinessesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def business_params
-      params.require(:business).permit(:name, :adress, :postal_code, :city, :employer_id)
+      params.require(:business).permit(:name, :adress, :postal_code, :city)
+    end
+
+    def is_employer?
+      unless current_user.role == "employer"
+        render json: {error: ["accessible aux employeurs seulement"]}, status: :unauthorized
+      end
     end
 end

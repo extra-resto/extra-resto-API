@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_20_104130) do
+ActiveRecord::Schema.define(version: 2021_03_18_161647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,24 +20,10 @@ ActiveRecord::Schema.define(version: 2021_03_20_104130) do
     t.string "adress"
     t.string "postal_code"
     t.string "city"
-    t.bigint "employer_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["employer_id"], name: "index_businesses_on_employer_id"
-  end
-
-  create_table "candidates", force: :cascade do |t|
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_candidates_on_user_id"
-  end
-
-  create_table "employers", force: :cascade do |t|
-    t.bigint "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_employers_on_user_id"
+    t.index ["user_id"], name: "index_businesses_on_user_id"
   end
 
   create_table "jwt_denylist", force: :cascade do |t|
@@ -55,6 +41,7 @@ ActiveRecord::Schema.define(version: 2021_03_20_104130) do
     t.string "first_name"
     t.string "last_name"
     t.string "phone_number"
+    t.integer "role"
     t.string "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
