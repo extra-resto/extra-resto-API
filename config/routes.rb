@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   
+  resources :events
   Rails.application.routes.default_url_options[:host] = 'localhost:3000'
     namespace :api, defaults: { format: :json } do
       resources :users, only: %w[show]
