@@ -5,7 +5,7 @@ class CreateBusinesses < ActiveRecord::Migration[6.1]
       t.string :adress
       t.string :postal_code
       t.string :city
-      t.belongs_to :employer, index: true
+      t.belongs_to :user, index: true
       t.timestamps
     end
   end
