@@ -16,17 +16,11 @@ The app allows business owners to post events, and fill their staff needs, and c
 
 ##Access
 
-Admin: 
-email: admin@test.fr
-password: azerty
-
-Employer: 
-email: employer@test.fr
-password: azerty
-
-Candidate: 
-email: candidate@test.fr
-password: azerty
+|Role|Email|Password                                                  
+|-|-|
+| `Admin` | admin@test.fr | azerty     
+| `Employer` | employer@test.fr 
+| `Candidate` |candidate@test.fr
 
 ##Try the app
 
