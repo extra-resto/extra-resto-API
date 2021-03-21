@@ -17,10 +17,10 @@ The app allows business owners to post events, and fill their staff needs, and c
 ##Access
 
 |Role|Email|Password                                                  
-|-|-|
+|-|-|-|
 | `Admin` | admin@test.fr | azerty     
-| `Employer` | employer@test.fr 
-| `Candidate` |candidate@test.fr
+| `Employer` | employer@test.fr |azerty
+| `Candidate` |candidate@test.fr |azerty
 
 ##Try the app
 
@@ -38,5 +38,5 @@ The app allows business owners to post events, and fill their staff needs, and c
 
 - [:cactus: Dylan Pecqueux](https://github.com/dylan-pecqueux)
 - [:deciduous_tree: Stephen Toulouse](https://github.com/stephen2790022)
-- [:deciduous_tree: Gaëtan Altier](https://github.com/Badgaga23)
+- [:evergreen_tree: Gaëtan Altier](https://github.com/Badgaga23)
 - [:seedling: Mathieu Joly](https://github.com/mathieu-superpose)
