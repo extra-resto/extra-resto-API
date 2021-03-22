@@ -5,5 +5,6 @@ class User < ApplicationRecord
 		:jwt_authenticatable, jwt_revocation_strategy: JwtDenylist
 
   has_many :businesses
+  has_many :events, through: :businesses
   enum role: [:candidate, :employer, :admin]
 end

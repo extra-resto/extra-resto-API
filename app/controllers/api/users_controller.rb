@@ -3,7 +3,7 @@ class Api::UsersController < Api::BaseController
     before_action :find_user, only: %w[show]
   
     def show
-      render_jsonapi_response(@user)
+      render json: @user, include: [:businesses, :events]
     end
   
     private
