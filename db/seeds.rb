@@ -1,8 +1,16 @@
 require 'faker'
+require 'activerecord-reset-pk-sequence'
 
-User.delete_all
-Business.delete_all
-Event.delete_all
+ActiveRecord::Base.connection.disable_referential_integrity do
+  User.delete_all
+  User.reset_pk_sequence
+  Business.delete_all
+  Business.reset_pk_sequence
+  Event.delete_all
+  Event.reset_pk_sequence
+  Job.delete_all
+  Job.reset_pk_sequence
+end
 
 #admin
 User.create(first_name: "Edd", last_name: "Mine", email: "admin@test.fr", phone_number:"+33612345678", password:"azerty", password_confirmation:"azerty", role: 2)
