@@ -3,7 +3,7 @@ class Api::UsersController < Api::BaseController
     before_action :find_user, only: %w[show]
   
     def show
-      render json: @user, include: [:businesses, :events, :jobs]
+      render json: @user, include: [:businesses, :events => { :include => :jobs }]
     end
 
     private
