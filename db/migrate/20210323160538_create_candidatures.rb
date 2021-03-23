@@ -3,6 +3,7 @@ class CreateCandidatures < ActiveRecord::Migration[6.1]
     create_table :candidatures do |t|
       t.references :user, null: false, foreign_key: true
       t.references :job, null: false, foreign_key: true
+      t.boolean :hired, default: false
 
       t.timestamps
     end

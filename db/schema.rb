@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2021_03_23_160538) do
   create_table "candidatures", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "job_id", null: false
+    t.boolean "hired", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["job_id"], name: "index_candidatures_on_job_id"
