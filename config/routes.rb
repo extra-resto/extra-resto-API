@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       resources :users, only: %w[show]
       resources :businesses
       resources :events
+      resources :jobs
     end
 
     devise_for :users,
