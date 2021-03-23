@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  dresscode: MyText
+  free_stead: 1
+  date: 2021-03-23 12:30:11
+  duration: 1
+  rate: 1
+  event: one
+
+two:
+  name: MyString
+  description: MyText
+  dresscode: MyText
+  free_stead: 1
+  date: 2021-03-23 12:30:11
+  duration: 1
+  rate: 1
+  event: two
