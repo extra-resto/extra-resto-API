@@ -9,5 +9,6 @@ class User < ApplicationRecord
 
   has_many :candidatures
 
+  has_many :jobs, through: :events
   enum role: [:candidate, :employer, :admin]
 end
