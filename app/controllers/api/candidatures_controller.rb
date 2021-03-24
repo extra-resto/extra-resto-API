@@ -1,5 +1,6 @@
 class Api::CandidaturesController < ApplicationController
   before_action :set_candidature, only: [:show, :update, :destroy]
+  before_action :find_jobId, only: [:create, :update, :destroy]
 
   # GET /candidatures
   def index
@@ -15,10 +16,10 @@ class Api::CandidaturesController < ApplicationController
 
   # POST /candidatures
   def create
-    @candidature = Candidature.new(candidature_params)
+    @candidature = Candidature.create(user: current_user, job: params[:jobs_id])
 
     if @candidature.save
-      render json: @candidature, status: :created, location: @candidature
+      render json: @candidature, status: :created
     else
       render json: @candidature.errors, status: :unprocessable_entity
     end
@@ -42,6 +43,10 @@ class Api::CandidaturesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_candidature
       @candidature = Candidature.find(params[:id])
+    end
+    
+    def find_jobId
+      @job = Job.find(params[:id]) 
     end
 
     # Only allow a list of trusted parameters through.
