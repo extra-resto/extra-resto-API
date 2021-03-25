@@ -22,6 +22,7 @@ gem 'dotenv', '~> 2.7', '>= 2.7.6'
 gem 'table_print', '~> 1.5', '>= 1.5.7'
 gem 'rack-cors', '~> 1.1', '>= 1.1.1'
 gem 'jsonapi-rails', '~> 0.4.0'
+gem 'mailjet'
 gem 'activerecord-reset-pk-sequence'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
