@@ -5,6 +5,6 @@ class RegistrationsController < Devise::RegistrationsController
       resource.save
       sign_up(resource_name, resource) if resource.persisted?
   
-      render_jsonapi_response(resource)
+      render json: resource.as_json(root: false, methods: :resume_url).except('updated_at')
     end
 end

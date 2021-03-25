@@ -14,6 +14,14 @@ class User < ApplicationRecord
   
   enum role: [:candidate, :employer, :admin]
 
+  has_one_attached :resume
+
+  def resume_url
+    if resume.attached?
+      resume.blob.service_url
+    end
+  end
+  
   # Mailer
   after_create :welcome_send
   

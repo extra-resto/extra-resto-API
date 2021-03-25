@@ -34,6 +34,7 @@
 /build
 
 # misc
+.local_env.yml
 .DS_Store
 .env.local
 .env.development.local
