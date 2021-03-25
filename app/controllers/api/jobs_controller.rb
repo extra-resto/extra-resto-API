@@ -10,7 +10,7 @@ class  Api::JobsController < ApplicationController
 
   # GET /jobs/1
   def show
-    render json: @job
+    render json: @job, include: [:candidatures, :event , :businesses]
   end
 
   # POST /jobs
