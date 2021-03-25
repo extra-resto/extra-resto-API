@@ -10,6 +10,8 @@ ActiveRecord::Base.connection.disable_referential_integrity do
   Event.reset_pk_sequence
   Job.delete_all
   Job.reset_pk_sequence
+  Candidature.delete_all
+  Candidature.reset_pk_sequence
 end
 
 #admin

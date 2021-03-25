@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(version: 2021_03_23_160538) do
   end
 
   create_table "candidatures", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "job_id", null: false
+    t.bigint "user_id"
+    t.bigint "job_id"
     t.boolean "hired", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -86,7 +86,5 @@ ActiveRecord::Schema.define(version: 2021_03_23_160538) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "candidatures", "jobs"
-  add_foreign_key "candidatures", "users"
   add_foreign_key "jobs", "events"
 end

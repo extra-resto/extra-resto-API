@@ -1,8 +1,8 @@
 class CreateCandidatures < ActiveRecord::Migration[6.1]
   def change
     create_table :candidatures do |t|
-      t.references :user, null: false, foreign_key: true
-      t.references :job, null: false, foreign_key: true
+      t.belongs_to :user, index: true
+      t.belongs_to :job, index: true
       t.boolean :hired, default: false
 
       t.timestamps
