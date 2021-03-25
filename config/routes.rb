@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :businesses
       resources :events
       resources :jobs
+      resources :candidatures
       post '/presigned_url', to: 'direct_upload#create'
     end
 

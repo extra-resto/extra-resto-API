@@ -54,6 +54,16 @@ ActiveRecord::Schema.define(version: 2021_03_23_175949) do
     t.index ["user_id"], name: "index_businesses_on_user_id"
   end
 
+  create_table "candidatures", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "job_id"
+    t.boolean "hired", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["job_id"], name: "index_candidatures_on_job_id"
+    t.index ["user_id"], name: "index_candidatures_on_user_id"
+  end
+
   create_table "events", force: :cascade do |t|
     t.bigint "business_id"
     t.string "name"
