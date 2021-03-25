@@ -27,7 +27,9 @@ class Api::CandidaturesController < ApplicationController
 
   # PATCH/PUT /candidatures/1
   def update
-    if @candidature.update(candidature_params)
+
+
+    if @candidature.update(user_id: params[:user_id], job_id: params[:job_id], hired: params[:hired])
       render json: @candidature
     else
       render json: @candidature.errors, status: :unprocessable_entity
