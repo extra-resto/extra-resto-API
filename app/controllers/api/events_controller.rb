@@ -10,7 +10,15 @@ class Api::EventsController < ApplicationController
 
   # GET /events/1
   def show
-    render json: @event, include: [:jobs]
+    render json: @event, :include => {
+      :jobs => {
+        :include => {
+          :candidatures => {
+            include: :user
+          }
+        } 
+      }
+    }
   end
 
   # POST /events
