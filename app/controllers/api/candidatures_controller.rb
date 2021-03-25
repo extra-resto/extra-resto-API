@@ -1,6 +1,6 @@
 class Api::CandidaturesController < ApplicationController
   before_action :set_candidature, only: [:show, :update, :destroy]
-  before_action :find_jobId, only: [:create, :update, :destroy]
+
 
   # GET /candidatures
   def index
@@ -16,7 +16,7 @@ class Api::CandidaturesController < ApplicationController
 
   # POST /candidatures
   def create
-    @candidature = Candidature.create(user: current_user, job: params[:jobs_id])
+    @candidature = Candidature.create(user_id: current_user.id, job_id: params[:jobs_id])
 
     if @candidature.save
       render json: @candidature, status: :created
@@ -45,12 +45,10 @@ class Api::CandidaturesController < ApplicationController
       @candidature = Candidature.find(params[:id])
     end
     
-    def find_jobId
-      @job = Job.find(params[:id]) 
-    end
+
 
     # Only allow a list of trusted parameters through.
     def candidature_params
-      params.require(:candidature).permit(:users_id, :jobs_id)
+      params.require(:candidature).permit(:jobs_id)
     end
 end
