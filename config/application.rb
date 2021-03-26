@@ -1,4 +1,5 @@
 require_relative "boot"
+require 'dotenv'
 
 require "rails"
 # Pick the frameworks you want:
