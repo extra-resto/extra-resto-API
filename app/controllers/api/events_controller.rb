@@ -5,7 +5,15 @@ class Api::EventsController < ApplicationController
   def index
     @events = Event.all
 
-    render json: @events
+    render json: @events, :include => {
+      :jobs => {
+        :include => {
+          :candidatures => {
+            include: :user
+          }
+        } 
+      }
+    }
   end
 
   # GET /events/1
