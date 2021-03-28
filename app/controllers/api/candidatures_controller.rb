@@ -37,7 +37,7 @@ class Api::CandidaturesController < ApplicationController
   end
   def userCandidatures
     @candidatures = Candidature.where(user_id: current_user)
-    render json: @candidatures
+    render json: @candidatures, include: [:job]
   end
   # DELETE /candidatures/1
   def destroy
