@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.1'
 
-gem 'faker'
+gem 'faker', '~> 1.6', '>= 1.6.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3'
 # Use postgresql as the database for Active Record
@@ -23,8 +23,9 @@ gem 'dotenv-rails', '~> 2.1'
 gem 'table_print', '~> 1.5', '>= 1.5.7'
 gem 'rack-cors', '~> 1.1', '>= 1.1.1'
 gem 'jsonapi-rails', '~> 0.4.0'
-gem 'mailjet'
-gem 'activerecord-reset-pk-sequence'
+gem 'mailjet', '~> 1.1'
+gem 'activerecord-reset-pk-sequence', '~> 0.2.0'
+gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
