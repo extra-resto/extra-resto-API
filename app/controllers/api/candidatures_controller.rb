@@ -35,7 +35,10 @@ class Api::CandidaturesController < ApplicationController
       render json: @candidature.errors, status: :unprocessable_entity
     end
   end
-
+  def userCandidatures
+    @candidatures = Candidature.where(user_id: current_user)
+    render json: @candidatures
+  end
   # DELETE /candidatures/1
   def destroy
     @candidature.destroy

@@ -4,7 +4,7 @@ class Api::UsersController < Api::BaseController
   
     def show
       render json: @user.as_json(root: false, methods: :resume_url, :include => {
-                                                                      :businesses => {
+                                                                        :businesses => {
                                                                         :include => {
                                                                           :events => {
                                                                             :include => {
